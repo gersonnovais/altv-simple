@@ -1,2 +1,2 @@
-import './modules/db.js';
-import './modules/connect.js';
+import './module/db.js';
+import './module/connect.js';

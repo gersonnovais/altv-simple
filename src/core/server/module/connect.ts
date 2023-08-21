@@ -1,5 +1,5 @@
 import * as alt from 'alt-server';
-import Database from './db';
+import Database from './db.js';
 
 alt.log(`alt:V Server - Boilerplate Started`);
 alt.on('playerConnect', handlePlayerConnect);
