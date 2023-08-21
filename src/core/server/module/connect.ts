@@ -32,6 +32,8 @@ const spawnPlayer = async (player: alt.Player, data: any) => {
     player.setSyncedMeta('playerData', data);
     player.model = data.model;
     player.spawn(data.pos);
+    player.wallet = data.wallet;
+    player.bank = data.bank;
 };
 
 alt.onClient('savePlayer', async (player: alt.Player) => {
