@@ -7,9 +7,9 @@ declare module 'alt-server' {
 
         addToWallet(value: number): boolean;
         removeToWallet(value: number): boolean;
-        addToBank(value: number): boolean;
+        bankDeposit(value: number): boolean;
         bankWithdraw(value: number): boolean;
-        depositToBank(value: number): boolean;
+        removeToBank(value: number): boolean;
     }
 }
 
@@ -26,7 +26,7 @@ alt.Player.prototype.removeToWallet = function removeToWallet(value: number) {
     return true;
 };
 
-alt.Player.prototype.addToBank = function addToBank(value: number) {
+alt.Player.prototype.bankDeposit = function bankDeposit(value: number) {
     if (value < 0 || !this.wallet || this.wallet - value < 0) return false;
     if (!this.bank) this.bank = 0;
     this.bank += value;
@@ -41,10 +41,9 @@ alt.Player.prototype.bankWithdraw = function bankWithdraw(value: number) {
     return true;
 };
 
-alt.Player.prototype.depositToBank = function depositToBank(value: number) {
+alt.Player.prototype.removeToBank = function removeToBank(value: number) {
     if (value < 0 || !this.wallet || this.wallet < value) return false;
     if (!this.bank) this.bank = 0;
-    this.wallet -= value;
     this.bank += value;
     return true;
 };
