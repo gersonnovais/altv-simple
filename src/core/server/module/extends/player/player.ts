@@ -9,6 +9,7 @@ declare module 'alt-server' {
     }
 }
 
+// Funções de emissão de meta dados
 alt.Player.prototype.emitMeta = function emitMeta(key: string, ...args: any[]) {
     this.setMeta(key, ...args);
     alt.emitClient(this, key, ...args);

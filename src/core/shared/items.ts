@@ -12,7 +12,7 @@ interface Item {
    combinable?: boolean;
 }
 
-interface Items {
+export interface Items {
    [key: string]: Item;
 }
 
