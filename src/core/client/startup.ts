@@ -1,5 +1,6 @@
 import * as alt from 'alt-client';
 import helpers from './modules/helpers.js';
+import './modules/inventory.js';
 alt.onServer('log:Console', handleLogConsole);
 
 function handleLogConsole(msg: string) {
@@ -18,7 +19,9 @@ alt.onServer('financial', (wallet, bank) => {
     alt.Player.local.wallet = wallet;
     alt.Player.local.bank = bank;
 });
-
+alt.on('connectionComplete', () => {
+    alt.Player.local.webViewOpen = false;
+});
 // alt.onServer('drawNotification', helpers.drawNotification);
 
 alt.setInterval(() => {
