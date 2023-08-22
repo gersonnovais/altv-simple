@@ -1,4 +1,22 @@
-export const Items = {
+interface Item {
+   name: string;
+   label: string;
+   weight: number;
+   type: 'weapon' | 'item';
+   image: string;
+   unique: boolean;
+   useable: boolean;
+   description: string;
+   ammotype?: 'undefined' | 'nil'| string;
+   shouldClose?: boolean;
+   combinable?: boolean;
+}
+
+interface Items {
+   [key: string]: Item;
+}
+
+export const ItemsList: Items = {
     "weapon_unarmed":{
     "name":"weapon_unarmed",
     "label":"Fists",
@@ -1141,7 +1159,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Pistol Default Clip"
  },
  "pistol_extendedclip":{
@@ -1153,7 +1171,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Pistol Extended Clip"
  },
  "pistol_flashlight":{
@@ -1165,7 +1183,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Pistol Flashlight Attachment"
  },
  "pistol_suppressor":{
@@ -1177,7 +1195,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Pistol Suppressor Attachment"
  },
  "pistol_luxuryfinish":{
@@ -1189,7 +1207,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Pistol Luxury Finish"
  },
  "combatpistol_defaultclip":{
@@ -1201,7 +1219,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Combat Pistol Default Clip"
  },
  "combatpistol_extendedclip":{
@@ -1213,7 +1231,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Combat Pistol Extended Clip"
  },
  "combatpistol_luxuryfinish":{
@@ -1225,7 +1243,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Combat Pistol Luxury Finish"
  },
  "appistol_defaultclip":{
@@ -1237,7 +1255,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"APPistol Default Clip"
  },
  "appistol_extendedclip":{
@@ -1249,7 +1267,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"APPistol Extended Clip"
  },
  "appistol_luxuryfinish":{
@@ -1261,7 +1279,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"APPistol Luxury Finish"
  },
  "pistol50_defaultclip":{
@@ -1273,7 +1291,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":".50 Pistol Default Clip"
  },
  "pistol50_extendedclip":{
@@ -1285,7 +1303,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":".50 Pistol Extended Clip"
  },
  "pistol50_luxuryfinish":{
@@ -1297,7 +1315,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":".50 Pistol Luxury Finish"
  },
  "revolver_defaultclip":{
@@ -1309,7 +1327,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Revovler Default Clip"
  },
  "revolver_vipvariant":{
@@ -1321,7 +1339,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Revovler Variant"
  },
  "revolver_bodyguardvariant":{
@@ -1333,7 +1351,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Revovler Variant"
  },
  "snspistol_defaultclip":{
@@ -1345,7 +1363,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"SNS Pistol Default Clip"
  },
  "snspistol_extendedclip":{
@@ -1357,7 +1375,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"SNS Pistol Extended Clip"
  },
  "snspistol_grip":{
@@ -1369,7 +1387,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"SNS Pistol Grip Attachment"
  },
  "heavypistol_defaultclip":{
@@ -1381,7 +1399,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Heavy Pistol Default Clip"
  },
  "heavypistol_extendedclip":{
@@ -1393,7 +1411,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Heavy Pistol Extended Clip"
  },
  "heavypistol_grip":{
@@ -1405,7 +1423,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Heavy Pistol Grip Attachment"
  },
  "vintagepistol_defaultclip":{
@@ -1417,7 +1435,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Vintage Pistol Default Clip"
  },
  "vintagepistol_extendedclip":{
@@ -1429,7 +1447,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Vintage Pistol Default Clip"
  },
  "microsmg_defaultclip":{
@@ -1441,7 +1459,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Micro SMG Default Clip"
  },
  "microsmg_extendedclip":{
@@ -1453,7 +1471,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Micro SMG Extended Clip"
  },
  "microsmg_scope":{
@@ -1465,7 +1483,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Micro SMG Scope Attachment"
  },
  "microsmg_luxuryfinish":{
@@ -1477,7 +1495,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Micro SMG Luxury Finish"
  },
  "smg_defaultclip":{
@@ -1489,7 +1507,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"SMG Default Clip"
  },
  "smg_extendedclip":{
@@ -1501,7 +1519,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"SMG Extended Clip"
  },
  "smg_drum":{
@@ -1513,7 +1531,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"SMG Drum"
  },
  "smg_scope":{
@@ -1525,7 +1543,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"SMG Scope Attachment"
  },
  "smg_luxuryfinish":{
@@ -1537,7 +1555,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"SMG Luxury Finish"
  },
  "assaultsmg_defaultclip":{
@@ -1549,7 +1567,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Assault SMG Default Clip"
  },
  "assaultsmg_extendedclip":{
@@ -1561,7 +1579,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Assault SMG Extended Clip"
  },
  "assaultsmg_luxuryfinish":{
@@ -1573,7 +1591,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Assault SMG Luxury Finish"
  },
  "minismg_defaultclip":{
@@ -1585,7 +1603,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Mini SMG Default Clip"
  },
  "minismg_extendedclip":{
@@ -1597,7 +1615,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Mini SMG Extended Clip"
  },
  "machinepistol_defaultclip":{
@@ -1609,7 +1627,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Machine Pistol Default Clip"
  },
  "machinepistol_extendedclip":{
@@ -1621,7 +1639,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Machine Pistol Extended Clip"
  },
  "machinepistol_drum":{
@@ -1633,7 +1651,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Machine Pistol Drum"
  },
  "combatpdw_defaultclip":{
@@ -1645,7 +1663,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Combat PDW Default Clip"
  },
  "combatpdw_extendedclip":{
@@ -1657,7 +1675,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Combat PDW Extended Clip"
  },
  "combatpdw_drum":{
@@ -1669,7 +1687,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Combat PDW Drum"
  },
  "combatpdw_grip":{
@@ -1681,7 +1699,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Combat PDW Grip Attachment"
  },
  "combatpdw_scope":{
@@ -1693,7 +1711,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Combat PDW Scope Attachment"
  },
  "shotgun_suppressor":{
@@ -1705,7 +1723,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Shotgun Suppressor Attachment"
  },
  "pumpshotgun_luxuryfinish":{
@@ -1717,7 +1735,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Pump Shotgun Luxury Finish"
  },
  "sawnoffshotgun_luxuryfinish":{
@@ -1729,7 +1747,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Sawn Off Shotgun Luxury Finish"
  },
  "assaultshotgun_defaultclip":{
@@ -1741,7 +1759,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Assault Shotgun Default Clip"
  },
  "assaultshotgun_extendedclip":{
@@ -1753,7 +1771,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Assault Shotgun Extended Clip"
  },
  "heavyshotgun_defaultclip":{
@@ -1765,7 +1783,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Heavy Shotgun Default Clip"
  },
  "heavyshotgun_extendedclip":{
@@ -1777,7 +1795,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Heavy Shotgun Extended Clip"
  },
  "heavyshotgun_drum":{
@@ -1789,7 +1807,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Heavy Shotgun Drum"
  },
  "assaultrifle_defaultclip":{
@@ -1801,7 +1819,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Assault Rifle Default Clip"
  },
  "assaultrifle_extendedclip":{
@@ -1813,7 +1831,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Assault Rifle Extended Clip"
  },
  "assaultrifle_drum":{
@@ -1825,7 +1843,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Assault Rifle Drum"
  },
  "rifle_flashlight":{
@@ -1837,7 +1855,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Rifle Flashlight Attachment"
  },
  "rifle_grip":{
@@ -1849,7 +1867,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Rifle Grip Attachment"
  },
  "rifle_suppressor":{
@@ -1861,7 +1879,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Rifle Suppressor Attachment"
  },
  "assaultrifle_luxuryfinish":{
@@ -1873,7 +1891,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Assault Rifle Luxury Finish"
  },
  "carbinerifle_defaultclip":{
@@ -1885,7 +1903,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Carbine Rifle Default Clip"
  },
  "carbinerifle_extendedclip":{
@@ -1897,7 +1915,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Carbine Rifle Extended Clip"
  },
  "carbinerifle_drum":{
@@ -1909,7 +1927,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Carbine Rifle Drum"
  },
  "carbinerifle_scope":{
@@ -1921,7 +1939,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Carbine Rifle Scope"
  },
  "carbinerifle_luxuryfinish":{
@@ -1933,7 +1951,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Carbine Rifle Luxury Finish"
  },
  "advancedrifle_defaultclip":{
@@ -1945,7 +1963,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Advanced Rifle Default Clip"
  },
  "advancedrifle_extendedclip":{
@@ -1957,7 +1975,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Advanced Rifle Extended Clip"
  },
  "advancedrifle_luxuryfinish":{
@@ -1969,7 +1987,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Advanced Rifle Luxury Finish"
  },
  "specialcarbine_defaultclip":{
@@ -1981,7 +1999,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Special Carbine Default Clip"
  },
  "specialcarbine_extendedclip":{
@@ -1993,7 +2011,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Special Carbine Extended Clip"
  },
  "specialcarbine_drum":{
@@ -2005,7 +2023,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Special Carbine Drum"
  },
  "specialcarbine_luxuryfinish":{
@@ -2017,7 +2035,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Special Carbine Luxury Finish"
  },
  "bullpuprifle_defaultclip":{
@@ -2029,7 +2047,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Bullpup Rifle Default Clip"
  },
  "bullpuprifle_extendedclip":{
@@ -2041,7 +2059,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Bullpup Rifle Extended Clip"
  },
  "bullpuprifle_luxuryfinish":{
@@ -2053,7 +2071,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Bullpup Rifle Luxury Finish"
  },
  "compactrifle_defaultclip":{
@@ -2065,7 +2083,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Compact Rifle Default Clip"
  },
  "compactrifle_extendedclip":{
@@ -2077,7 +2095,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Compact Rifle Extended Clip"
  },
  "compactrifle_drum":{
@@ -2089,7 +2107,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Compact Rifle Drum"
  },
  "gusenberg_defaultclip":{
@@ -2101,7 +2119,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Gusenberg Default Clip"
  },
  "gusenberg_extendedclip":{
@@ -2113,7 +2131,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Gusenberg Extended Clip"
  },
  "sniperrifle_defaultclip":{
@@ -2125,7 +2143,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Sniper Rifle Default Clip"
  },
  "sniper_scope":{
@@ -2137,7 +2155,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Sniper Rifle Scope Attachment"
  },
  "snipermax_scope":{
@@ -2149,7 +2167,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Sniper Rifle Max Scope Attachment"
  },
  "sniper_grip":{
@@ -2161,7 +2179,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Sniper Rifle Grip Attachment"
  },
  "heavysniper_defaultclip":{
@@ -2173,7 +2191,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Heavy Sniper Default Clip"
  },
  "marksmanrifle_defaultclip":{
@@ -2185,7 +2203,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Marksman Rifle Default Clip"
  },
  "marksmanrifle_extendedclip":{
@@ -2197,7 +2215,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Marksman Rifle Extended Clip"
  },
  "marksmanrifle_scope":{
@@ -2209,7 +2227,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Marksman Rifle Scope Attachment"
  },
  "marksmanrifle_luxuryfinish":{
@@ -2221,7 +2239,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Marksman Rifle Luxury Finish"
  },
  "weapontint_black":{
@@ -2233,7 +2251,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Default/Black Weapon Tint"
  },
  "weapontint_green":{
@@ -2245,7 +2263,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Green Weapon Tint"
  },
  "weapontint_gold":{
@@ -2257,7 +2275,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Gold Weapon Tint"
  },
  "weapontint_pink":{
@@ -2269,7 +2287,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Pink Weapon Tint"
  },
  "weapontint_army":{
@@ -2281,7 +2299,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Army Weapon Tint"
  },
  "weapontint_lspd":{
@@ -2293,7 +2311,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"LSPD Weapon Tint"
  },
  "weapontint_orange":{
@@ -2305,7 +2323,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Orange Weapon Tint"
  },
  "weapontint_plat":{
@@ -2317,7 +2335,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Platinum Weapon Tint"
  },
  "pistol_ammo":{
@@ -2329,7 +2347,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Ammo for Pistols"
  },
  "rifle_ammo":{
@@ -2341,7 +2359,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Ammo for Rifles"
  },
  "smg_ammo":{
@@ -2353,7 +2371,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Ammo for Sub Machine Guns"
  },
  "shotgun_ammo":{
@@ -2365,7 +2383,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Ammo for Shotguns"
  },
  "mg_ammo":{
@@ -2377,7 +2395,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Ammo for Machine Guns"
  },
  "snp_ammo":{
@@ -2389,7 +2407,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Ammo for Sniper Rifles"
  },
  "id_card":{
@@ -2401,7 +2419,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A card containing all your information to identify yourself"
  },
  "driver_license":{
@@ -2413,7 +2431,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Permit to show you can drive a vehicle"
  },
  "lawyerpass":{
@@ -2425,7 +2443,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Pass exclusive to lawyers to show they can represent a suspect"
  },
  "weaponlicense":{
@@ -2437,7 +2455,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Weapon License"
  },
  "visa":{
@@ -2449,7 +2467,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Visa can be used via ATM"
  },
  "mastercard":{
@@ -2461,7 +2479,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"MasterCard can be used via ATM"
  },
  "security_card_01":{
@@ -2473,7 +2491,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A security card... I wonder what it goes to"
  },
  "security_card_02":{
@@ -2485,7 +2503,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A security card... I wonder what it goes to"
  },
  "tosti":{
@@ -2497,7 +2515,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Nice to eat"
  },
  "twerks_candy":{
@@ -2509,7 +2527,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Some delicious candy :O"
  },
  "snikkel_candy":{
@@ -2521,7 +2539,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Some delicious candy :O"
  },
  "sandwich":{
@@ -2533,7 +2551,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Nice bread for your stomach"
  },
  "water_bottle":{
@@ -2545,7 +2563,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"For all the thirsty out there"
  },
  "coffee":{
@@ -2557,7 +2575,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Pump 4 Caffeine"
  },
  "kurkakola":{
@@ -2569,7 +2587,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"For all the thirsty out there"
  },
  "beer":{
@@ -2581,7 +2599,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Nothing like a good cold beer!"
  },
  "whiskey":{
@@ -2593,7 +2611,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"For all the thirsty out there"
  },
  "vodka":{
@@ -2605,7 +2623,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"For all the thirsty out there"
  },
  "grape":{
@@ -2617,7 +2635,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Mmmmh yummie, grapes"
  },
  "wine":{
@@ -2629,7 +2647,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Some good wine to drink on a fine evening"
  },
  "grapejuice":{
@@ -2641,7 +2659,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Grape juice is said to be healthy"
  },
  "joint":{
@@ -2653,7 +2671,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Sidney would be very proud at you"
  },
  "cokebaggy":{
@@ -2665,7 +2683,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"To get happy real quick"
  },
  "crack_baggy":{
@@ -2677,7 +2695,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"To get happy faster"
  },
  "xtcbaggy":{
@@ -2689,7 +2707,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Pop those pills baby"
  },
  "weed_brick":{
@@ -2701,7 +2719,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"1KG Weed Brick to sell to large customers."
  },
  "coke_brick":{
@@ -2713,7 +2731,7 @@ export const Items = {
     "unique":true,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Heavy package of cocaine, mostly used for deals and takes a lot of space"
  },
  "coke_small_brick":{
@@ -2725,7 +2743,7 @@ export const Items = {
     "unique":true,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Small package of cocaine, mostly used for deals and takes a lot of space"
  },
  "oxy":{
@@ -2737,7 +2755,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"The Label Has Been Ripped Off"
  },
  "meth":{
@@ -2749,7 +2767,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A baggie of Meth"
  },
  "rolling_paper":{
@@ -2761,23 +2779,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":{
-       "accept":[
-          "weed_white-widow",
-          "weed_skunk",
-          "weed_purple-haze",
-          "weed_og-kush",
-          "weed_amnesia",
-          "weed_ak47"
-       ],
-       "reward":"joint",
-       "anim":{
-          "dict":"anim@amb@business@weed@weed_inspecting_high_dry@",
-          "lib":"weed_inspecting_high_base_inspector",
-          "text":"Rolling joint",
-          "timeOut":5000
-       }
-    },
+    "combinable":false,
     "description":"Paper made specifically for encasing and smoking tobacco or cannabis."
  },
  "weed_white-widow":{
@@ -2789,7 +2791,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A weed bag with 2g White Widow"
  },
  "weed_skunk":{
@@ -2801,7 +2803,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A weed bag with 2g Skunk"
  },
  "weed_purple-haze":{
@@ -2813,7 +2815,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A weed bag with 2g Purple Haze"
  },
  "weed_og-kush":{
@@ -2825,7 +2827,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A weed bag with 2g OG Kush"
  },
  "weed_amnesia":{
@@ -2837,7 +2839,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A weed bag with 2g Amnesia"
  },
  "weed_ak47":{
@@ -2849,7 +2851,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A weed bag with 2g AK47"
  },
  "weed_white-widow_seed":{
@@ -2861,7 +2863,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A weed seed of White Widow"
  },
  "weed_skunk_seed":{
@@ -2873,7 +2875,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A weed seed of Skunk"
  },
  "weed_purple-haze_seed":{
@@ -2885,7 +2887,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A weed seed of Purple Haze"
  },
  "weed_og-kush_seed":{
@@ -2897,7 +2899,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A weed seed of OG Kush"
  },
  "weed_amnesia_seed":{
@@ -2909,7 +2911,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A weed seed of Amnesia"
  },
  "weed_ak47_seed":{
@@ -2921,7 +2923,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A weed seed of AK47"
  },
  "empty_weed_bag":{
@@ -2933,7 +2935,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A small empty bag"
  },
  "weed_nutrition":{
@@ -2945,7 +2947,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Plant nutrition"
  },
  "plastic":{
@@ -2957,7 +2959,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"RECYCLE! - Greta Thunberg 2019"
  },
  "metalscrap":{
@@ -2969,7 +2971,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"You can probably make something nice out of this"
  },
  "copper":{
@@ -2981,7 +2983,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Nice piece of metal that you can probably use for something"
  },
  "aluminum":{
@@ -2993,7 +2995,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Nice piece of metal that you can probably use for something"
  },
  "aluminumoxide":{
@@ -3005,7 +3007,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Some powder to mix with"
  },
  "iron":{
@@ -3017,7 +3019,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Handy piece of metal that you can probably use for something"
  },
  "ironoxide":{
@@ -3029,18 +3031,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":{
-       "accept":[
-          "aluminumoxide"
-       ],
-       "reward":"thermite",
-       "anim":{
-          "dict":"anim@amb@business@weed@weed_inspecting_high_dry@",
-          "lib":"weed_inspecting_high_base_inspector",
-          "text":"Mixing powder..",
-          "timeOut":10000
-       }
-    },
+    "combinable":false,
     "description":"Some powder to mix with."
  },
  "steel":{
@@ -3052,7 +3043,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Nice piece of metal that you can probably use for something"
  },
  "rubber":{
@@ -3064,7 +3055,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Rubber, I believe you can make your own rubber ducky with it :D"
  },
  "glass":{
@@ -3076,7 +3067,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"It is very fragile, watch out"
  },
  "lockpick":{
@@ -3088,18 +3079,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":{
-       "accept":[
-          "screwdriverset"
-       ],
-       "reward":"advancedlockpick",
-       "anim":{
-          "dict":"anim@amb@business@weed@weed_inspecting_high_dry@",
-          "lib":"weed_inspecting_high_base_inspector",
-          "text":"Crafting lockpick",
-          "timeOut":7500
-       }
-    },
+    "combinable":false,
     "description":"Very useful if you lose your keys a lot.. or if you want to use it for something else..."
  },
  "advancedlockpick":{
@@ -3111,7 +3091,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"If you lose your keys a lot this is very useful... Also useful to open your beers"
  },
  "electronickit":{
@@ -3123,13 +3103,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":{
-       "accept":[
-          "gatecrack"
-       ],
-       "reward":"trojan_usb",
-       "anim":"nil"
-    },
+    "combinable":false,
     "description":"If you\\'ve always wanted to build a robot you can maybe start here. Maybe you\\'ll be the new Elon Musk?"
  },
  "gatecrack":{
@@ -3141,7 +3115,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Handy software to tear down some fences"
  },
  "thermite":{
@@ -3153,7 +3127,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Sometimes you\\'d wish for everything to burn"
  },
  "trojan_usb":{
@@ -3165,7 +3139,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Handy software to shut down some systems"
  },
  "screwdriverset":{
@@ -3177,7 +3151,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Very useful to screw... screws..."
  },
  "drill":{
@@ -3189,7 +3163,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"The real deal..."
  },
  "nitrous":{
@@ -3201,7 +3175,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Speed up, gas pedal! :D"
  },
  "repairkit":{
@@ -3213,7 +3187,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A nice toolbox with stuff to repair your vehicle"
  },
  "advancedrepairkit":{
@@ -3225,7 +3199,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A nice toolbox with stuff to repair your vehicle"
  },
  "cleaningkit":{
@@ -3237,7 +3211,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A microfiber cloth with some soap will let your car sparkle again!"
  },
  "tunerlaptop":{
@@ -3249,7 +3223,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"With this tunerchip you can get your car on steroids... If you know what you\\'re doing"
  },
  "harness":{
@@ -3261,7 +3235,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Racing Harness so no matter what you stay in the car"
  },
  "jerry_can":{
@@ -3273,7 +3247,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A can full of Fuel"
  },
  "firstaid":{
@@ -3285,7 +3259,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"You can use this First Aid kit to get people back on their feet"
  },
  "bandage":{
@@ -3297,7 +3271,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A bandage works every time"
  },
  "painkillers":{
@@ -3309,7 +3283,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"For pain you can\\'t stand anymore, take this pill that\\'d make you feel great again"
  },
  "walkstick":{
@@ -3321,7 +3295,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Walking stick for ya\\'ll grannies out there.. HAHA"
  },
  "phone":{
@@ -3333,7 +3307,7 @@ export const Items = {
     "unique":true,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Neat phone ya got there"
  },
  "radio":{
@@ -3345,7 +3319,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"You can communicate with this through a signal"
  },
  "iphone":{
@@ -3357,7 +3331,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Very expensive phone"
  },
  "samsungphone":{
@@ -3369,7 +3343,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Very expensive phone"
  },
  "laptop":{
@@ -3381,7 +3355,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Expensive laptop"
  },
  "tablet":{
@@ -3393,7 +3367,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Expensive tablet"
  },
  "fitbit":{
@@ -3405,7 +3379,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"I like fitbit"
  },
  "radioscanner":{
@@ -3417,7 +3391,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"With this you can get some police alerts. Not 100% effective however"
  },
  "pinger":{
@@ -3429,7 +3403,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"With a pinger and your phone you can send out your location"
  },
  "cryptostick":{
@@ -3441,7 +3415,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Why would someone ever buy money that doesn\\'t exist.. How many would it contain..?"
  },
  "rolex":{
@@ -3453,7 +3427,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A golden watch seems like the jackpot to me!"
  },
  "diamond_ring":{
@@ -3465,7 +3439,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A diamond ring seems like the jackpot to me!"
  },
  "goldchain":{
@@ -3477,7 +3451,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A golden chain seems like the jackpot to me!"
  },
  "10kgoldchain":{
@@ -3489,7 +3463,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"10 carat golden chain"
  },
  "goldbar":{
@@ -3501,7 +3475,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Looks pretty expensive to me"
  },
  "armor":{
@@ -3513,7 +3487,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Some protection won\\'t hurt... right?"
  },
  "heavyarmor":{
@@ -3525,7 +3499,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Some protection won\\'t hurt... right?"
  },
  "handcuffs":{
@@ -3537,7 +3511,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Comes in handy when people misbehave. Maybe it can be used for something else?"
  },
  "police_stormram":{
@@ -3549,7 +3523,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A nice tool to break into doors"
  },
  "empty_evidence_bag":{
@@ -3561,7 +3535,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Used a lot to keep DNA from blood, bullet shells and more"
  },
  "filled_evidence_bag":{
@@ -3573,7 +3547,7 @@ export const Items = {
     "unique":true,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A filled evidence bag to see who committed the crime >:("
  },
  "firework1":{
@@ -3585,7 +3559,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Fireworks"
  },
  "firework2":{
@@ -3597,7 +3571,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Fireworks"
  },
  "firework3":{
@@ -3609,7 +3583,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Fireworks"
  },
  "firework4":{
@@ -3621,7 +3595,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Fireworks"
  },
  "dendrogyra_coral":{
@@ -3633,7 +3607,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Its also known as pillar coral"
  },
  "antipatharia_coral":{
@@ -3645,7 +3619,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Its also known as black corals or thorn corals"
  },
  "diving_gear":{
@@ -3657,7 +3631,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"An oxygen tank and a rebreather"
  },
  "casinochips":{
@@ -3669,7 +3643,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Chips For Casino Gambling"
  },
  "stickynote":{
@@ -3681,7 +3655,7 @@ export const Items = {
     "unique":true,
     "useable":false,
     "shouldClose":false,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Sometimes handy to remember something :)"
  },
  "moneybag":{
@@ -3693,7 +3667,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A bag with cash"
  },
  "parachute":{
@@ -3705,7 +3679,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"The sky is the limit! Woohoo!"
  },
  "binoculars":{
@@ -3717,7 +3691,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Sneaky Breaky..."
  },
  "snowball":{
@@ -3729,7 +3703,7 @@ export const Items = {
     "unique":false,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Should have catched it :D"
  },
  "lighter":{
@@ -3741,7 +3715,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"On new years eve a nice fire to stand next to"
  },
  "certificate":{
@@ -3753,7 +3727,7 @@ export const Items = {
     "unique":false,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Certificate that proves you own certain stuff"
  },
  "markedbills":{
@@ -3765,7 +3739,7 @@ export const Items = {
     "unique":true,
     "useable":false,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Money?"
  },
  "labkey":{
@@ -3777,7 +3751,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"Key for a lock...?"
  },
  "printerdocument":{
@@ -3789,7 +3763,7 @@ export const Items = {
     "unique":true,
     "useable":true,
     "shouldClose":true,
-    "combinable":"nil",
+    "combinable": false,
     "description":"A nice document"
  }
 }
