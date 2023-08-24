@@ -18,7 +18,7 @@ var selectedItem = null;
 
 var IsDragging = false;
 
-$(document).on('keydown', function () {
+$(document).on('keydown', function (event) {
     if (event.repeat) {
         return;
     }
@@ -51,7 +51,7 @@ $(document).on('dblclick', '.item-slot', function (e) {
     }
 });
 
-$(document).on('keyup', function () {
+$(document).on('keyup', function (event) {
     switch (event.keyCode) {
         case 17: // TAB
             ControlPressed = false;

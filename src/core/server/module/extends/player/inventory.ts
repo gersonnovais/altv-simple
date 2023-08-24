@@ -1,5 +1,5 @@
 import * as alt from 'alt-server';
-import { Items, ItemsList } from '../../../../shared/items';
+import { Items, ItemsList } from '../../../../shared/items.js';
 
 declare module 'alt-server' {
     export interface Player {
