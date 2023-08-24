@@ -9,6 +9,7 @@ alt.onClient('paycheck', (player: alt.Player) => {
 alt.onClient('savePlayer', async (player: alt.Player) => {
     try {
         await player.saveAll();
+        player.setSyncedMeta('inventory', player.inventory);
     } catch (error) {
         throw new Error('deu ruim');
     }

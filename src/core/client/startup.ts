@@ -1,6 +1,6 @@
 import * as alt from 'alt-client';
-import helpers from './modules/helpers.js';
-import './modules/inventory.js';
+import helpers from './module/helpers.js';
+import './module/inventory.js';
 alt.onServer('log:Console', handleLogConsole);
 
 function handleLogConsole(msg: string) {

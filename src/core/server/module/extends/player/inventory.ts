@@ -103,6 +103,16 @@ alt.Player.prototype.addItem = async function addItem(
     return false;
 };
 
-const getItemSlot = (inventory: any, item: string): number | undefined => {
-    return inventory.findIndex((invItem: any) => invItem && invItem.name.toLowerCase() === item.toLowerCase());
+const getItemSlot = (inventory: any[], item: string) => {
+    if (!Array.isArray(inventory)) {
+        console.error('O inventário não está definido como um array.');
+        return undefined;
+    }
+
+    for (let i = 0; i < inventory.length; i++) {
+        if (inventory[i] && inventory[i].name.toLowerCase() === item.toLowerCase()) {
+            return i;
+        }
+    }
+    return undefined;
 };

@@ -47,5 +47,9 @@ const spawnPlayer = async (player: alt.Player, data: any) => {
     player.wallet = data.wallet;
     player._id = await data._id.toString();
     player.bank = data.bank;
+    player.inventory = player.inventory || [];
+    player.addItem('weapon_knife', 2, 9);
+    // player.addItem('vodka', 5, 7);
+
     alt.emitClient(player, 'financial', data.wallet, data.bank);
 };
